@@ -1,5 +1,6 @@
 package randomnumbergenerator;
 
+import com.andersonsouza.randomnumbergenerator.RandomNumberGenerator;
 import org.junit.Test;
 
 public class RandomNumberGeneratorTest {
@@ -11,19 +12,19 @@ public class RandomNumberGeneratorTest {
     }
 
     @Test(expected = Exception.class)
-    public void exception_quando_numerofinal_menorouigual_numeroinicial() {
-        random.Aleatorizar(10, 1, 0);
+    public void exception_when_finalNumber_less_or_equal_firstNumber() {
+        random.Generate(10, 1, 0);
     }
 
     @Test(expected = Exception.class)
-    public void exception_quando_quantidadenumeros_maior_intervalo_de_numeros() {
-        random.Aleatorizar(1, 2, 6);
+    public void exception_when_quantityOfNumbers_greaterThen_numbersRange() {
+        random.Generate(1, 2, 6);
     }
 
     @Test(expected = Exception.class)
-    public void exception_quando_numeros_negativos() {
-        random.Aleatorizar(-1, 0, 0);
-        random.Aleatorizar(0, -1, 0);
-        random.Aleatorizar(0, 0, -1);
+    public void exception_when_negativeNumbers() {
+        random.Generate(-1, 0, 0);
+        random.Generate(0, -1, 0);
+        random.Generate(0, 0, -1);
     }
 }
